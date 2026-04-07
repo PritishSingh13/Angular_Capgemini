@@ -1,0 +1,54 @@
+.container{
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: #1e1e2f;   
+    padding: 20px;
+}
+
+
+.card{
+    position: absolute;
+    width: 150px;   
+    height: 150px;  
+    border: 1px solid white;
+    background-color: white;
+}
+
+/* Overlapping positions */
+.card1{
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.card2{
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+}
+
+.card3{
+    top: 80px;
+    left: 80px;
+    z-index: 3;
+}
+
+.card4{
+    top: 110px;
+    left: 110px;
+    z-index: 4;
+}
+
+
+.card img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.card:hover{
+    width: 180px;   
+    height: 180px;
+    z-index: 10;
+}
