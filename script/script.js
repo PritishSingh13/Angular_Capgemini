@@ -42,17 +42,35 @@
 
 //FETCHING
 
-let data=fetch("https://dummyjson.com/products");
+// let data=fetch("https://dummyjson.com/products");
 
-data
-.then((a)=>{
-    return a.json(); //a.json() converts response → JavaScript object
-})
-.then((b)=>{
-    let val=b.products; //This .then() runs when a.json() is complete
-// b contains the actual data from API
-    val.forEach((a)=>{
-        console.log(a);
-        console.log(a.description)
-    });
-});
+// data
+// .then((a)=>{
+//     return a.json(); //a.json() converts response → JavaScript object
+// })
+// .then((b)=>{
+//     let val=b.products; //This .then() runs when a.json() is complete
+// // b contains the actual data from API
+//     val.forEach((a)=>{
+//         console.log(a);
+//         console.log(a.description)
+//     });
+// });
+
+
+//Fetching (Async)
+async function demo(){
+    
+    try{
+        let val=await fetch("https://dummyjson.com/products");
+
+    let data=await val.json();
+    console.log(val);
+    console.log(data);
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+demo();
