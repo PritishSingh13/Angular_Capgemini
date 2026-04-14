@@ -1,3 +1,16 @@
-// ye code page load hote hi run hoga
+// number type
+let a: number;
+a = 10;
+// a = true;
 
-document.getElementById("text").innerHTML = "JS Loaded Automatically";
+
+// string type
+let username: string;
+username = "Pritish";
+// name = 20; 
+
+
+// boolean type
+let isLogin: boolean;
+isLogin = true;
+// isLogin = "yes;
