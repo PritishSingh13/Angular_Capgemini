@@ -1,0 +1,59 @@
+body {
+  background-color: cadetblue;
+}
+
+/* CONTAINER */
+.container {
+  position: relative;
+  width: 1000px;   
+  height: 800px;  
+  margin: 100px auto;
+}
+
+/* CARDS */
+.card {
+  position: absolute;
+  width: 650px;   
+  height: 900px;  
+  object-fit: cover;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Adjusted Stack*/
+.c1 {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.c2 {
+  top: 30px;
+  left: 60px;
+  z-index: 2;
+}
+
+.c3 {
+  top: 60px;
+  left: 120px;
+  z-index: 3;
+}
+
+.c4 {
+  top: 90px;
+  left: 180px;
+  z-index: 4;
+}
+
+.c5 {
+  top: 120px;
+  left: 240px;
+  z-index: 5;
+}
+
+/* HOVER */
+.card:hover {
+  z-index: 100;
+  transform: scale(1.05);
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #141414;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #1f1f1f;
+            width: 350px;
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .location {
+            color: #c4f82a;
+            font-size: 14px;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        .bio {
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c4f82a;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- Profile Image (LOCAL IMAGE) -->
+        <img src="author.jpg" alt="profile" class="profile-img">
+
+        <!-- Name -->
+        <div class="name">Pritish Singh</div>
+
+        <!-- Location -->
+        <div class="location">Varanasi, India</div>
+
+        <!-- Bio -->
+        <div class="bio">
+            "Front-end developer and avid reader."
+        </div>
+
+        <!-- Buttons -->
+        <a href="#" class="btn">GitHub</a>
+        <a href="#" class="btn">Frontend Mentor</a>
+        <a href="#" class="btn">LinkedIn</a>
+        <a href="#" class="btn">Twitter</a>
+        <a href="#" class="btn">Instagram</a>
+
+    </div>
+
+</body>
+</html>

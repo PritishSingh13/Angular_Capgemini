@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Now Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0b1e;
+            --card-bg: #1c1c2e;
+            --accent-blue: #4c56db;
+            --text-main: #ffffff;
+            --text-dim: #a0a0b0;
+            --gradient-main: linear-gradient(135deg, #4c56db 0%, #2e368f 100%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            width: 90%;
+            max-width: 1000px;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo { font-weight: bold; font-size: 1.2rem; }
+        .logo i { color: #ff8c00; margin-right: 8px; }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-grow: 1;
+            padding: 0 50px;
+        }
+
+        .search-bar {
+            background: var(--card-bg);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .btn-search {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Layout Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        /* Current Weather Card */
+        .hero-card {
+            background: var(--gradient-main);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-info h2 { margin: 0; font-size: 2rem; }
+        .hero-info p { color: #d0d0ff; margin-top: 5px; }
+        
+        .hero-temp {
+            font-size: 5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-temp i { color: #ffd700; font-size: 3rem; }
+
+        /* Detail Grid (Feels like, Humidity, etc.) */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .detail-label { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 10px; }
+        .detail-value { font-size: 1.3rem; font-weight: bold; }
+
+        /* Daily Forecast */
+        .daily-section { margin-top: 30px; }
+        .daily-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .day-card {
+            background: var(--card-bg);
+            padding: 15px 5px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .day-card i { margin: 15px 0; font-size: 1.2rem; display: block; }
+        .high-low { font-size: 0.8rem; }
+        .high-low span { margin: 0 2px; }
+        .low { color: var(--text-dim); }
+
+        /* Hourly Sidebar */
+        .hourly-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .hourly-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #2a2a40;
+        }
+        .hourly-item:last-child { border-bottom: none; }
+        .hour-time { display: flex; align-items: center; gap: 10px; width: 80px;}
+
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+    <header>
+        <div class="logo"><i class="fas fa-sun"></i> Weather Now</div>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for a place...">
+            <button class="btn-search">Search</button>
+        </div>
+        <div class="units">Units <i class="fas fa-chevron-down"></i></div>
+    </header>
+
+    <h1 style="text-align:center; margin-bottom: 40px; font-weight: 500;">How's the sky looking today?</h1>
+
+    <div class="main-content">
+        <div class="left-col">
+            <div class="hero-card">
+                <div class="hero-info">
+                    <h2>Berlin, Germany</h2>
+                    <p>Tuesday, Aug 5, 2025</p>
+                </div>
+                <div class="hero-temp">
+                    <i class="fas fa-sun"></i> 20°
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-label">Feels Like</div>
+                    <div class="detail-value">18°</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Humidity</div>
+                    <div class="detail-value">46%</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Wind</div>
+                    <div class="detail-value">14 km/h</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Precipitation</div>
+                    <div class="detail-value">0 mm</div>
+                </div>
+            </div>
+
+            <div class="daily-section">
+                <h3>Daily forecast</h3>
+                <div class="daily-grid">
+                    <div class="day-card"><div>Tue</div><i class="fas fa-cloud-showers-heavy"></i><div class="high-low">20° <span class="low">14°</span></div></div>
+                    <div class="day-card"><div>Wed</div><i class="fas fa-cloud-rain"></i><div class="high-low">21° <span class="low">15°</span></div></div>
+                    <div class="day-card"><div>Thu</div><i class="fas fa-sun"></i><div class="high-low">24° <span class="low">14°</span></div></div>
+                    <div class="day-card"><div>Fri</div><i class="fas fa-cloud-sun"></i><div class="high-low">25° <span class="low">13°</span></div></div>
+                    <div class="day-card"><div>Sat</div><i class="fas fa-cloud-bolt"></i><div class="high-low">21° <span class="low">15°</span></div></div>
+                    <div class="day-card"><div>Sun</div><i class="fas fa-cloud-sun-rain"></i><div class="high-low">25° <span class="low">16°</span></div></div>
+                    <div class="day-card"><div>Mon</div><i class="fas fa-smog"></i><div class="high-low">24° <span class="low">15°</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hourly-card">
+            <div style="display:flex; justify-content: space-between; margin-bottom: 20px;">
+                <span>Hourly forecast</span>
+                <span style="font-size: 0.8rem; color: var(--text-dim);">Tuesday <i class="fas fa-chevron-down"></i></span>
+            </div>
+            
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-cloud"></i> 3 PM</div>
+                <div class="hour-temp">20°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-cloud-sun"></i> 4 PM</div>
+                <div class="hour-temp">20°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-sun"></i> 5 PM</div>
+                <div class="hour-temp">20°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-cloud"></i> 6 PM</div>
+                <div class="hour-temp">19°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-cloud-rain"></i> 7 PM</div>
+                <div class="hour-temp">18°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-smog"></i> 8 PM</div>
+                <div class="hour-temp">18°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-cloud-showers-heavy"></i> 9 PM</div>
+                <div class="hour-temp">17°</div>
+            </div>
+            <div class="hourly-item">
+                <div class="hour-time"><i class="fas fa-cloud"></i> 10 PM</div>
+                <div class="hour-temp">17°</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
