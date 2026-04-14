@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork HTML</title>
+    <style> 
+        #head{
+            color: aqua;
+        }
+
+        .box{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h3 class="box">hello</h3>
+    <h3 class="box">helloooo</h3>
+    <h3>LPU</h3>
+
+    <img src="/Concept_Variant3.png" alt="vs code" height="100px" width="100">
+    <br>
+    <b title="this is bold">bold</b>
+
+    <p> 
+        h<sub>2</sub>o, this is example of sub. 
+    </p>
+
+    <p>
+        4<sup>2</sup>, this is example of sup.
+    </p>
+    
+    <!-- UNORDERED LIST -->
+    <ul type ="square">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+    </ul>
+    
+    <!-- ORDERED LIST -->
+    <ol>    
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+
+    <!-- anchor tag -->
+    <a href="https://net22.cc/home">
+        <img src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/15844974/netflixlogo.0.0.1466448626.png" height="200px" width="200px" alt="Netflix">
+    </a>
+
+    <!-- QR Code -->
+    <a href="https://net22.cc/home">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://net20.cc/home" height="200px" width="200px" alt="">
+    </a>
+
+    <!-- video -->
+    <video style="display: inline-block;" src="328167.mp4" height="300px" width="400px" controls muted autoplay></video>
+
+    <audio src="stevekaldes-a-quiet-joy-stevekaldes-piano-385744.mp3" controls></audio>
+
+    <!-- TABLE -->
+    <table border="1">
+        <tr>
+            <td>Roll No</td>
+            <td>Name</td>
+            <td>Subject</td>
+            <td>Branch</td>
+            <td>M-No</td>
+            <td>Second M-No</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Pritish</td>
+            <td>Angular</td>
+            <td>Cse</td>
+            <td>7525820161</td>
+            <td>6389833277</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Murli</td>
+            <td rowspan="2">Java</td>
+            <td rowspan="2">Mech.</td>
+            <td>7856698521</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rahul</td>
+            <td>9999999999</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!-- FORM -->
+    <form>
+        <!-- Username -->
+        <label for="name">Username</label>
+        <input type="text" id="name" name="username" 
+               placeholder="Enter name"
+               minlength="4" maxlength="15"
+               pattern="[A-Za-z]+" 
+               title="Only alphabets allowed"
+               required>
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" 
+               placeholder="Enter email" required>
+        <br><br>
+
+        <!-- Password -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" 
+               placeholder="Enter password"
+               minlength="6" maxlength="20"
+               required>
+        <br><br>
+
+        <!-- Phone -->
+        <label for="phone">Mobile No:</label><br>
+        <input type="tel" id="phone" name="phone"
+               pattern="[0-9]{10}"
+               placeholder="10 digit number"
+               required>
+        <br><br>
+
+        <!-- DOB -->
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required>
+        <br><br>
+
+        <!-- Subjects -->
+        <label>Subjects:</label><br><br>
+
+        <input type="checkbox" id="html">
+        <label for="html">HTML</label><br>
+
+        <input type="checkbox" id="css">
+        <label for="css">CSS</label><br>
+
+        <input type="checkbox" id="js">
+        <label for="js">JS</label><br><br>
+
+        <!-- DROPDOWN -->
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course" required>
+            <option value="">-- Select Course --</option>
+
+            <optgroup label="Web Development">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+            </optgroup>
+
+            <optgroup label="Programming">
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+            </optgroup>
+        </select>
+        <br><br>
+
+
+
+        <!-- SUBMIT -->
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <hr>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- Reservation Information Form -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Form</title>
+</head>
+<body>
+    <fieldset>
+        <legend><b>Reservation Information Form</b></legend>
+        <form>
+            <label>NAME*: </label>
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+            <br /> <br />
+            
+            <label>Phone Number*: </label>
+            <input 
+            type="tel"
+            name="phone" 
+            placeholder="Ex: 1234567890" 
+            required>
+            <br/><br />
+
+            <label>Email*: </label>
+            <input 
+            type="email"
+            name="email"
+            placeholder="MailId"
+            required>
+            <br /><br />
+
+           
+            <label>Check Date: *</label>
+            <input type="date" name="checkin" required>
+            
+            <label>Check Out Date: *</label>
+            <input type="date" name="checkout" required>
+            <br /><br />
+
+            <label>Special Requirements:</label>
+            <textarea name="requirements"></textarea>
+            <br/ ><br />
+
+             <button type="submit">Submit</button>
+        </form>
+    </fieldset>
+</body>
+</html>
