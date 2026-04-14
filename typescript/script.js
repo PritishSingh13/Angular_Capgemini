@@ -11,12 +11,25 @@
 // let isLogin: boolean;
 // isLogin = true;
 // // isLogin = "yes;
-// TYPE NARROWING
-let value = "Hello";
-// check type
-if (typeof value === "string") {
-    console.log("It is a string");
-}
-if (typeof value === "number") {
-    console.log("It is a number");
+//                // TYPE NARROWING
+// let value: unknown = "Hello";
+// // check type
+// if (typeof value === "string") {
+//     console.log("It is a string");
+// }
+// if (typeof value === "number") {
+//     console.log("It is a number");
+// }
+// // function with parameter annotation
+// function add(a: number, b: number): number {
+//     return a + b;
+// }
+// let result = add(5, 10);
+// console.log(result);
+// function with optional parameter
+function demo(a, b, c) {
+    console.log("hello");
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
