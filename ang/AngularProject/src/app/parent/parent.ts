@@ -26,4 +26,14 @@ export class ParentComponent {
     'color': 'red',
     'padding': '10px'
   };
+  
+ toggleCss() {
+    this.css = {
+      'background-color': this.css['background-color'] === 'black' ? 'violet' : 'black',
+      'color': this.css['color'] === 'red' ? 'yellow' : 'red',
+      'padding': '10px'
+    };
+  }
+
+
 }
