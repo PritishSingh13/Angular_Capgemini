@@ -1,16 +1,9 @@
-<h2>Parent Component</h2>
+<h2>ngClass Inline Button Example</h2>
 
-<p>Data from Child:</p>
+<p [ngClass]="handleClass()">
+  Hello
+</p>
 
-<ul>
-  <li *ngFor="let item of receivedArray">
-    {{item}}
-  </li>
-</ul>
-
-<hr>
-
-<app-child
-  [dataFromParent]="messageToChild"
-  (dataEvent)="getDataFromChild($event)">
-</app-child>
+<button (click)="act = !act; inact = !inact">
+  Change Background
+</button>

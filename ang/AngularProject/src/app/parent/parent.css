@@ -1,0 +1,12 @@
+.active {
+  background-color: lightgreen;
+  padding: 10px;
+}
+
+.inactive {
+  background-color: rgb(99, 162, 199);
+  padding: 10px;
+}
+.bgcolor{
+  background-color: black;
+}
