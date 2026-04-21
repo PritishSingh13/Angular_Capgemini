@@ -1,0 +1,16 @@
+<h2>Parent Component</h2>
+
+<p>Array received from Child:</p>
+
+<ul>
+  <li *ngFor="let item of receivedArray">
+    {{item}}
+  </li>
+</ul>
+
+<hr>
+
+<app-child
+  [parentData]="parentMessage"
+  (messageEvent)="receiveMessage($event)">
+</app-child>
