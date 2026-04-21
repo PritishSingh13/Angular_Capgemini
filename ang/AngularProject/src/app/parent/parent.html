@@ -1,5 +1,7 @@
 <h2>ngClass Inline Button Example</h2>
 
+
+<hr>
 <!-- ngClass example -->
 <p [ngClass]="handleClass()">
   Hello
@@ -9,10 +11,25 @@
   Change Background
 </button>
 
+<hr>
+
+<p [ngStyle]="css">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quibusdam quos dolorem eum, excepturi doloremque voluptas eius alias iste deleniti ea aperiam magnam consequatur.
+</p>
+
+<button (click)="toggleCss()">
+  Change Para Style
+</button>
+
+<hr>
+
 <h3>ng for</h3>
 <div *ngFor="let item of arr">
   <p>{{item}}</p>
 </div>
+
+
+<hr>
 
 <h3>ngSwitch Example</h3>
 <div [ngSwitch]="userType">
@@ -22,11 +39,47 @@
   <p *ngSwitchDefault> Unauthorized User</p>
 </div>
 
+<hr>
 
-<p [ngStyle]="css">
-  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quibusdam quos dolorem eum, excepturi doloremque voluptas eius alias iste deleniti ea aperiam magnam consequatur.
-</p>
+<h3>Control Flow (if / else if / else)</h3>
 
-<button (click)="toggleCss()">
-  Change Para Style
-</button>
+@if (userType === 'admin') {
+  <p>Admin Access Granted </p>
+}
+@else if (userType === 'user') {
+  <p>User Access Granted </p>
+}
+@else {
+  <p>Unauthorized Access </p>
+}
+
+
+<hr>
+
+<h3>Control Flow (for loop)</h3>
+
+@for (item of arr; track item) {
+  <p>{{ item }}</p>
+}
+
+<hr>
+<h3> Switch </h3>
+
+@switch (userType){
+  @case ('user'){
+    <h1>this is user dashboard</h1>
+  }
+  @case ('admin'){
+    <h1>this is admin dashboard</h1>
+  }
+  @case('guest'){
+    <h1>this is guest</h1>
+  }
+  @default {
+    <h1>Unauthorized</h1>
+  }
+}
+
+<hr>
+
+
