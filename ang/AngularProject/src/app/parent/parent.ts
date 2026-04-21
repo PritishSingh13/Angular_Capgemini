@@ -26,7 +26,7 @@ export class ParentComponent {
     'color': 'red',
     'padding': '10px'
   };
-  
+
  toggleCss() {
     this.css = {
       'background-color': this.css['background-color'] === 'black' ? 'violet' : 'black',
@@ -34,6 +34,7 @@ export class ParentComponent {
       'padding': '10px'
     };
   }
-
+arr : string [] = ["Apple","Banana","Mango","Orange"];
+  userType: string = "admin";
 
 }

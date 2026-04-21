@@ -9,6 +9,19 @@
   Change Background
 </button>
 
+<h3>ng for</h3>
+<div *ngFor="let item of arr">
+  <p>{{item}}</p>
+</div>
+
+<h3>ngSwitch Example</h3>
+<div [ngSwitch]="userType">
+  <p *ngSwitchCase = "'admin'">Welcome ADMIN</p>
+  <p *ngSwitchCase=" 'user'">Welcome USER</p>
+  <p *ngSwitchCase=" 'guest'">Welcome Guest</p>
+  <p *ngSwitchDefault> Unauthorized User</p>
+</div>
+
 
 <p [ngStyle]="css">
   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quibusdam quos dolorem eum, excepturi doloremque voluptas eius alias iste deleniti ea aperiam magnam consequatur.
