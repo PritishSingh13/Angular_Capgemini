@@ -1,0 +1,36 @@
+<h2>Login Form</h2>
+
+<form #formData="ngForm" (ngSubmit)="handleSubmit(formData)">
+
+  <label>Username:</label>
+  <input type="text" name="username" [(ngModel)]="username" required minlength="3" #userRef ="ngModel">
+
+  <p *ngIf = "userRef.touched && userRef.invalid">
+    Username is required (min 3 chars)
+  </p>
+
+  <br><br>
+
+  <label>Password:</label>
+  <input type="password" name="password" [(ngModel)]="password" required minlength="5" #passRef = "ngModel">
+
+  <p *ngIf="passRef.touched && passRef.invalid">
+    Password must be atleast 5 characters
+  </p>
+  <br><br>
+
+  <button type="submit" [disabled]="formData.invalid">Login</button>
+
+
+   <h3>Form States</h3>
+
+  <p>Pristine: {{formData.pristine}}</p>
+  <p>Dirty: {{formData.dirty}}</p>
+  <p>Touched: {{formData.touched}}</p>
+  <p>Untouched: {{formData.untouched}}</p>
+  <p>Valid: {{formData.valid}}</p>
+  <p>Invalid: {{formData.invalid}}</p>
+
+  <br>
+
+</form>

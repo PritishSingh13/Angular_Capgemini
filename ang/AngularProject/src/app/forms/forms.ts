@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform';
 
 @Component({
   selector: 'app-forms',
-  standalone: true,   // ✅ VERY IMPORTANT
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule,TemplatedrivenformComponent],
   templateUrl: './forms.html',
   styleUrls: ['./forms.css']
 })
