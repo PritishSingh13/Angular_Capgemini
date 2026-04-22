@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-parent',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UpperCasePipe, LowerCasePipe, CurrencyPipe, DatePipe, TitleCasePipe],
   templateUrl: './parent.html',
   styleUrls: ['./parent.css']
 })
@@ -37,4 +37,11 @@ export class ParentComponent {
 arr : string [] = ["Apple","Banana","Mango","Orange"];
   userType: string = "admin";
 
+
+userName: string = 'Pritish';
+date = new Date();
+price: number = 100;
+
+
 }
+
