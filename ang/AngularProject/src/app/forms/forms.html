@@ -1,0 +1,28 @@
+<p>forms works!</p>
+
+<!-- Tempelate reference => #  -->
+
+<select name="user" id="" #data (change)="handleChange()" [(ngModel)]="val">
+  <option value="">none</option>
+  <option value="user">user</option>
+  <option value="guest">guest</option>
+  <option value="admin">admin</option>
+</select>
+
+
+
+
+@switch (data.value) {
+  @case ('user') {
+    <h1>User Dashboard</h1>
+  }
+  @case ('admin') {
+    <h2>Admin Dashboard</h2>
+  }
+  @case ('guest') {
+    <h1>Guest Dashboard</h1>
+  }
+  @default {
+    <h1>error</h1>
+  }
+}
