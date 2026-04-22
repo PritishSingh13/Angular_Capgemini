@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule, CurrencyPipe, DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe, JsonPipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-parent',
   standalone: true,
-  imports: [CommonModule, UpperCasePipe, LowerCasePipe, CurrencyPipe, DatePipe, TitleCasePipe],
+  imports: [CommonModule, UpperCasePipe, LowerCasePipe, CurrencyPipe, DatePipe, TitleCasePipe , SlicePipe, JsonPipe],
   templateUrl: './parent.html',
   styleUrls: ['./parent.css']
 })
@@ -41,6 +41,15 @@ arr : string [] = ["Apple","Banana","Mango","Orange"];
 userName: string = 'Pritish';
 date = new Date();
 price: number = 100;
+
+userObj = {
+  name : "Pritish",
+  age : 22,
+  city : "Delhi",
+  role : "admin"
+};
+
+numbers: number []=[1, 2 , 3 , 4 ,5 , 6];
 
 
 }
